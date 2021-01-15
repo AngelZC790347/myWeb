@@ -37,6 +37,7 @@ label{
     padding: 5px;
     margin:20px;
     margin-left: 150px;
+    position:static;
 }
 #data_sec{
     background-color :rgb(233, 57, 92);
@@ -45,12 +46,12 @@ label{
     position: absolute;
     padding: 0px 50px;
     border:2px dashed;
-    width: 40%;
+    width: 45%;
 
 }
 aside{
     display:inline-block;
-    width: 55%;
+    width: 50%;
     top: 100px;
     position: absolute;
     left: 650px;
