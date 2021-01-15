@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../source/style.css">
+    <title>PASO 4</title>
+</head>
+<body onload="actualizaStep4()">
+    <header class="log_sec">
+        <a href="../index.html"><img src="https://www.holbertonschool.com/holberton-logo.png" alt=""></a>
+    </header>
+    <main>
+        <nav>
+            <p class="button_steps"><a href="../index.html" style="text-decoration: none;">Paso1</a></p>
+            <p class="button_steps"><a href="../tweets/tweets.html" style="text-decoration: none;">Paso2</a></p>
+            <p class="button_steps"><a href="../step3/step3.html" style="text-decoration: none;">Paso3</a></p>
+            <p class="button_steps" style="background:rgb(233, 57, 92);"><a href="./step4.html" style="text-decoration: none;">Paso 4</a></p>
+            <input type="button" class="enter_usr" value="Finalizar" onclick="finalizaPrograma()">
+        </nav>
+        <p style="margin-left: 50px;">
+            <img alt="Foto de Perfil" style="display: flex;"  id="img_perfil">
+            <input type="file" id="img_file" onchange="mostrarImagen()" >
+        </p>
+        <p class="skills_sec"> 
+            <label for="">Habilidades Adicionales</label>
+            <input type="text" id="skill_field">
+            <input type="button" value="ENTER" onclick="agregaSkills(document.getElementById('skill_field').value,'list_skills')">
+        </p> 
+        <div id="list_skills"></div>       
+    </main>
+    <footer>
+        Made by Angel Zuñiga Cano for <a href="https://www.holbertonschool.com" target="_blank">Holberton School</a>
+    </footer>
+</body>
+    <script src="../source/funciones.js">
+    
+    </script>
+</html>

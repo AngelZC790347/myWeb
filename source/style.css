@@ -1,0 +1,273 @@
+.button_steps{
+    display: inline-block;
+    background-color:beige;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: 100%;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+.inputField{
+    display: inline-block;
+    border:solid #ccc;
+    border-width:1px;
+    box-sizing: border-box;
+    width: 100%;
+    height:30px;
+    border-radius: 4px;
+
+}
+label{
+    padding-right:10px;
+}
+.form_info{
+    margin-right: 70px;
+    margin-top: 5px;
+}
+.enter_usr{
+    border-style:groove ;
+    border-width:0.5px;
+    padding: 5px;
+    margin:20px;
+    margin-left: 150px;
+}
+#data_sec{
+    background-color :rgb(233, 57, 92);
+    display:inline-block; 
+    height: 400px;
+    position: absolute;
+    padding: 0px 50px;
+    border:2px dashed;
+    width: 40%;
+
+}
+aside{
+    display:inline-block;
+    width: 55%;
+    top: 100px;
+    position: absolute;
+    left: 650px;
+    
+}
+.button_steps a:hover{
+    background-color: rgb(231, 178, 159);
+    border-radius: 10px;
+    transform:scale(1.1,1.1);
+}
+p a{
+    height: 100%;
+    text-align: center;
+    display: block;
+    padding: 20px 30px;
+}
+nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+main{
+    height:500px;
+}
+.log_sec a img{
+    height:80px;
+}
+.log_sec a{
+    height: 80px;
+    padding: 0px;
+    text-align: initial;
+}
+.log_sec a:hover{
+    background-color:unset;
+}
+footer{
+    align-items: center;
+    text-align: center;
+    padding: 70px;
+    padding-top: 90px;
+    padding-bottom: 10px;
+}
+footer a{
+     text-align: center;;
+}
+header{
+    height: 90px;
+}
+body{
+    background-image: url("https://cdn.pixabay.com/photo/2017/07/08/11/33/white-2484120_1280.png");
+}
+.form_sec{
+    display: none;
+}
+.action_but{
+    border:solid #ccc;
+    border-width:1px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    width: 1000px;
+    height: 60px;
+    margin-left: 50px;
+    margin-bottom: 0px;  
+} 
+.action_but:hover{
+    border-radius: 10px;
+    transform:scale(1.05,1.05); 
+}
+.action_but:hover+.displayed_form{
+    border-radius: 10px;
+    transform:scale(1.05,1.05);
+}   
+.action_but button{
+    background:rgb(233, 57, 92);
+    height: 100%;
+    margin: 0px;
+    align-items: flex-start;
+    width: 1000px;
+    border: none;
+} 
+#icon:hover{
+    transform:scale(1.2,1.2);
+}    
+#img_but {
+    width: 100px;
+}
+#img_but:hover{
+    background-color: rgb(172, 31, 13);
+
+}
+#seccionEdu{
+    margin-left:50px ;
+    margin-right: 370px;
+}   
+.displayed_form{
+    margin-top: 10px;
+    display: block;
+    position: absolute;
+    padding-left: 30px;
+    margin-left: 50px;
+    background-color:rgb(243, 243, 184) ;
+    width: 970px;
+    height: 110px;
+}
+form [type="button"]{
+    display: flex;
+    margin-top: 3px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+form label{
+    margin-bottom: 10px;
+}
+.sec-info{
+    background-color: aliceblue;
+    display: none;
+    margin-top:5px ;
+    margin-bottom: 0px;
+}
+.sec-field{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    display: flex;
+    width: 1000px;
+    height: 60px;
+    background-color: rgb(221, 212, 158);   
+}
+.sec-field .des-but{
+    background-color: rgb(221, 212, 158);   
+    height: 100%;
+    margin: 0px;
+    align-items: flex-start;
+    width:90%;
+    border: none;
+}
+.sec-field:hover{
+    border-radius: 10px;
+    transform:scale(1.05,1.05);
+}
+.sec-field:hover+.sec-info{
+    border-radius: 10px;
+    transform:scale(1.05,1.05);
+}
+
+.skills_sec{
+    border:solid #ccc;
+    border-width:1px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    width: 1000px;
+    margin-left: 50px;
+    margin-bottom: 0px;
+    background-color:rgb(221, 212, 158);
+    height: 60px;
+}
+.skills_sec input[type="text"]{
+    width: 70%;
+    margin: 10px;
+    display: inline-block;
+    border:solid #ccc;
+    border-width:1px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.skills_sec input[type="button"]{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.skills_sec label{
+    align-self: center;
+}
+.skill{
+    margin-left: 50px;
+    background-color: rgba(190, 190, 126, 0.89);
+    margin-top: 40px;
+    display: flex;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+}
+.skill li{
+    align-self:center;
+}
+.skill:hover{
+    border-radius: 10px;
+    transform:scale(1.05,1.05);
+}
+.skill button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+}
+.skills_sec:hover{
+    border-radius: 10px;
+    transform:scale(1.03,1.03);
+}
+.del-but{
+    background-color: rgb(221, 212, 158);   
+    width: 10%;
+    height: 100%;
+    margin-left:840px;
+    margin: 0px;
+    align-items: flex-start;
+    border: none;
+}
+.del-but:hover{
+    background-color: brown;
+}
+.del-but img{
+    height: 20px; 
+}
+.aside-info img{
+    margin-bottom: 15px;
+}

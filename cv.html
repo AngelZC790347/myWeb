@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./template1.css">
+</head>
+<body id="bodyEl"  style="background-image: url('https://cdn.pixabay.com/photo/2017/07/08/11/33/white-2484120_1280.png');">
+    <h1 style="font-size: 50px; ">Curriculum Vitale </h1>
+    <header >
+        <div id="info_sec">
+            <h2>Informacion Persoonal</h2>
+            <li class="info_sec"><strong>Nombre:</strong> </li>
+            <li class="info_sec"><strong>Apellido:</strong> </li>
+            <li class="info_sec"><strong>Email:</strong> </li>
+            <li class="info_sec"><strong>Fecha de Nacimiento:</strong> </li>
+            <li class="info_sec"><strong>Telefono:</strong> </li>
+        </div>
+        <div class="sec-img"><img src="" alt="" id="img_perfil"></div>
+    </header>
+    <main style="display: inline-block;">
+       <div>
+           <h2>Formacion</h2>  
+            <ul id="edu_sec" style="padding-left: 0px;"></ul>
+           
+       </div>
+       <div>
+            <h2>Experiencia</h2>
+            <ul id="exp_sec" style="padding-left: 0px;"></ul>
+       </div> 
+       <aside>
+           <h2 >Informacion adicional</h2>
+           <ul id="ad_sec" style="padding-left: 0px;"></ul>   
+       </aside>
+    </main>
+    <div  style="display: inline-flex;position: absolute;right: 0px; top:150px;"> 
+        <button id="text-ver"  onclick="mostrarForm()">EDITAR</button>   
+        <form action="" id="edit-selector">
+            <div class="select-sep" >
+                <input type="radio" id="color-back" name="back" value=""  onclick="displaySelect('color')">
+                <label for="color-back">Color de Fondo</label><input  id="color" type="color"><br>
+                <input type="radio" id="brosw-img" name="back" value="" onclick="displaySelect('url')" >
+                <label for="brosw-img" style="padding-right: 10px;">Buscar Imagen de fondo</label ><input id="url"  id="url" placeholder="Ingrese la url de la imagen" type="url"><br>
+                <input type="radio" id="local-img" name="back" value=""onclick="displaySelect('file')" > 
+                <label for="local-img">Subir Imagen de fondo</label> <input  id="file" type="file" >
+            </div>
+            <hr>
+            <div class="select-sep" style="margin-top: 10px;">
+                <label for="">Selecione Color de campos</label>
+                <input id="color-picker" type="color" onchange="cambiaColore()">
+            </div>
+            <button onclick="guardarTema()">Guardar Tema</button>
+            <button onclick="window.location.assign( './')">Cancelar</button>
+        </form>
+    </div>  
+</body>
+<script>
+    function cambiaColore(){
+                    let elements=document.getElementsByClassName('sec-info-cv');
+                    let selector= document.getElementById('color-picker');
+                    for (let key in elements) {
+                        let element = elements[key];
+                        element.style.backgroundColor=selector.value;
+                    }
+    }
+    document.getElementById('img_perfil').src=localStorage.getItem("img_perfil");
+    const cargaInfo=(idParent,key)=>{
+        let myObj=JSON.parse(localStorage.getItem(key));
+        let ulElement=document.getElementById(idParent);
+        for (const key in myObj) {
+            const element = myObj[key];
+            let liElement=document.createElement("ul");
+            liElement.className="sec-info-cv";
+            for (let key in element) {
+                 let value = element[key];
+                 var str=document.createTextNode(key+" : "+value);  
+                 var pEl=document.createElement("li");
+                 pEl.appendChild(str);
+                 liElement.appendChild(pEl);                  
+            }
+            ulElement.appendChild(liElement);
+        }
+    }
+    var myObj=JSON.parse(localStorage.getItem('myData'));
+    let liEl=document.getElementsByTagName("li");
+    var i=0;
+    for (const key in myObj) {
+        const element = myObj[key];
+        let textInfo=document.createTextNode(myObj[key]);
+        liEl[i].appendChild(textInfo);
+        i++;
+    }
+    cargaInfo("edu_sec","myEducation");
+    cargaInfo("exp_sec","myJobs");
+    cargaInfo("ad_sec","mySkills");
+    const mostrarForm=()=>{
+        var forEl=document.getElementById("edit-selector");
+        if (forEl.style.width=="0px"){
+            forEl.style.width="400px";
+        }else{
+            forEl.style.width="0px";
+        }
+    }
+    function displaySelect(id){
+        let elemt= document.getElementById(id);
+        let bodyEl=document.getElementById("bodyEl");
+        if (elemt.value==null||elemt.value==""){
+            return;
+        }else{
+            switch(id){
+                case "color":elemt.addEventListener("change",function(){
+                    bodyEl.style.backgroundColor=elemt.value;
+                })
+                    bodyEl.style.backgroundColor=elemt.value;
+                case "url":elemt.addEventListener("change",function() {
+                    bodyEl.style.backgroundImage="url("+elemt.value+")";
+                })
+                    bodyEl.style.backgroundImage="url("+elemt.value+")";
+                case "file": var files = elemt.files; 
+                                let f=files[0];
+                                if (!f.type.match('image.*')) {
+                                    return;
+                                }
+                                var reader = new FileReader();
+                                reader.onload = (function(theFile) {
+                                    return function(e) {
+                                    bodyEl.style.backgroundImage="url("+e.target.result+")";
+                                    bodyEl.style.backgroundRepeat="no-repeat"
+                                    bodyEl.style.backgroundSize="100%"
+                                    bodyEl.style.backgroundPositionY="top bottom"
+                                    };
+                                })(f);
+                                reader.readAsDataURL(f);
+                            
+            }
+        }
+    } 
+    function mostrarImagen() {
+        let el=document.getElementById('img_file');//add a modified File      
+    }
+    function guardarTema() {
+        let body=document.getElementById('bodyEl');
+        localStorage.setItem("urlBack",body.style.backgroundImage);
+        localStorage.setItem("colorBack",body.style.backgroundColor);
+        localStorage.setItem("colorFields",(document.getElementsByClassName('sec-info-cv')[0]).style.backgroundColor);
+    }
+    function cargaTema() { 
+        let body=document.getElementById('bodyEl');      
+        if(localStorage.getItem("colorBack")!=""){
+            body.style.backgroundImage="";
+            body.style.backgroundColor=localStorage.getItem("colorBack")
+        }else{
+            if(localStorage.getItem("urlBack")!=""){
+                body.style.backgroundImage=localStorage.getItem("urlBack");
+                bodyEl.style.backgroundRepeat="no-repeat"
+                bodyEl.style.backgroundSize="100%"
+                bodyEl.style.backgroundPositionY="top bottom"
+            }else{
+                return;
+            }
+        }
+    }
+    cargaTema();
+</script>
+</html>

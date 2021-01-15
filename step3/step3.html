@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../source/style.css">
+    <title>PASO 3</title>
+</head>
+<body onload="actualizaPagina('myJobs')">
+    <header class="log_sec">
+        <a href="../index.html"><img src="https://www.holbertonschool.com/holberton-logo.png" alt=""></a>
+    </header>
+    <main>
+        <nav>
+            <p class="button_steps"><a href="../index.html" style="text-decoration: none;">Paso1</a></p>
+            <p class="button_steps"><a href="../tweets/tweets.html" style="text-decoration: none;">Paso2</a></p>
+            <p class="button_steps" style="background: rgb(233, 57, 92);"><a href="./step3.html" style="text-decoration: none;">Paso3</a></p>
+            <input type="button" value="Guardar y Continuar" class="enter_usr"  onclick="enterFormacion('myJobs','../step4/step4.html')">
+        </nav>
+        <h1 class="action_but">
+            <button>EXPERIENCIA LABORAL</button>
+            <button id="img_but" onclick="mostrarForm('dis_form')"><img id="icon" style="height: 20px;" src="https://www.flaticon.es/svg/static/icons/svg/37/37770.svg" style="height: 10px;" alt=""></button>
+        </h1>
+        <form action="" id="dis_form" class="form_sec">
+            <label for="">Año de Inicio</label>
+            <input type="number" class="form_info">
+            <label for="">Centro Laboral</label>
+            <input type="text" placeholder="Nombre" class="form_info">      
+            <label for="">Año de Fin</label>
+            <input type="number" class="form_info" style="margin-right: 0px;">
+            <label for="">Descripci&oacuten</label>
+            <textarea name="" id="" cols="" rows="" style="height: 30px; width: 93%;margin-top: 0px; overflow:scroll; list-style: circle;" placeholder="Cargo realizado" class="form_info"></textarea>        
+            <input type="button" value="ENTER" onclick="updatePage('form_info','seccionEdu')">
+        </form>  
+        <div id="seccionEdu"></div>    
+    </main>
+    <footer>     
+        Made by Angel Zuñiga Cano for <a href="https://www.holbertonschool.com" target="_blank">Holberton School</a>  
+    </footer>
+</body>
+    <script src="../source/funciones.js">
+        document.getElementById("img_but").addEventListener("blur",function () {
+           document.getElementById("icon").autofocus=true; 
+        });
+    </script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../source/style.css">
+    <title>Document</title>
+</head>
+<body onload="actualizaPagina('myEducation')">
+    <header class="log_sec">
+        <a href="../index.html"><img src="https://www.holbertonschool.com/holberton-logo.png" alt=""></a>
+    </header>
+    <main>
+        <nav>
+            <p class="button_steps" ><a href="../index.html" style="text-decoration: none;">Paso1</a></p>
+            <p class="button_steps" style="background:rgb(233, 57, 92) ;"><a href="./tweets.html" style="text-decoration: none;">Paso2</a></p>
+            <input type="button" value="Guardar y Continuar" class="enter_usr" onclick="enterFormacion('myEducation','../step3/step3.html')">
+
+        </nav>
+        <h1 class="action_but">
+            <button>FORMACION</button>
+            <button id="img_but" onclick="mostrarForm('form-list')" on><img id="icon" style="height: 20px;" src="https://www.flaticon.es/svg/static/icons/svg/37/37770.svg" style="height: 10px;" alt=""></button>
+        </h1>
+        <form action="" class="form_sec" id="form-list">
+            <label for="">Año de Inicio</label>
+            <input type="number" class="form_info">
+            <label for="">Instituci&oacuten</label>
+            <input type="text" placeholder="Nombre" class="form_info">      
+            <label for="">Año de Fin</label>
+            <input type="number" class="form_info">
+            <label for="">Descripci&oacuten</label>
+            <textarea name="" id="" cols="" rows="10" style="height: 30px; width: 93%;margin-top: 0px; overflow-y:auto;" placeholder="nombre de grado de estudios o especializacion" class="form_info"></textarea>        
+            <input type="button" value="ENTER" onclick="updatePage('form_info','seccionEdu')"> 
+        </form>   
+        <div id="seccionEdu"></div>  
+    </main>
+    <footer>
+        <footer>
+            Made by Angel Zuñiga Cano for <a href="https://www.holbertonschool.com" target="_blank">Holberton School</a>
+        </footer>
+    </footer>
+</body>
+<script src="../source/funciones.js">
+    
+</script>
+</html>
