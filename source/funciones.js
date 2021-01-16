@@ -263,6 +263,8 @@ function actualizaStep4(){
         }
     }
     let string_img=localStorage.getItem("img_perfil");
-    document.getElementById("img_perfil").src=string_img;
-    document.getElementById("img_perfil").className="thumb";
+     if(string_img!=""&&string_img!=null){
+        document.getElementById("img_perfil").src=string_img;
+        document.getElementById("img_perfil").className="thumb";
+    }
 }
